@@ -4,7 +4,7 @@
       <router-link class="nav-link" to="/">Início</router-link>
     </li>
     <li class="nav-item">
-      <router-link class="nav-link" to="/sobre">Sobre</router-link>
+      <router-link class="nav-link" to="/projetos">Projetos</router-link>
     </li>
     <li class="nav-item">
       <router-link class="nav-link" to="/blog">Blog</router-link>

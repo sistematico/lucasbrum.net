@@ -2,6 +2,8 @@
 title: Lucas Saliés Brum
 ---
 
+<h1 class="mt-3">Sobre</h1>
+
 <div class="float-md-end">
   <img src="/img/avatar2.png" class="transform scale-110" style="border-radius: 0.75rem" />
 </div>
