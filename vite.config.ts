@@ -15,7 +15,6 @@ export default defineConfig({
       '~/': `${resolve(__dirname, 'src')}/`,
     },
   },
-
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/], // <-- allows Vue to compile Markdown files
@@ -42,5 +41,11 @@ export default defineConfig({
       ],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
     })
-  ]
+  ],
+
+  build: {
+    rollupOptions: {
+      external: (id) => id.includes('_posts')
+    }
+  }
 })
