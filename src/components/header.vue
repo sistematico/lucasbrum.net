@@ -12,7 +12,7 @@ const title = ref(import.meta.env.VITE_APP_TITLE)
         </RouterLink>
         <Burger name="navbarCollapse" />
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <slot />
+          <Navbar />
         </div>
       </div>
     </nav>

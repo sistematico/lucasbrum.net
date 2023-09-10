@@ -1,60 +1,80 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const name = ref('')
+const email = ref('')
+const message = ref('')
+const formURL = 'https://www.formbackend.com/f/ee96f8fb88dbbda7'
+
+async function postData(url = '', data = {}) {
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  })
+
+  return response.json()
+}
+
+const submit = async () => {
+  try {
+    const res = await postData(formURL, { name, email, message })
+    // const res = await fetch(`${formURL}`)
+
+    if (!res.ok) {
+      const message = `An error has occured: ${res.status} - ${res.statusText}`
+      throw new Error(message)
+    }
+
+    // const data = await res.json()
+    // const response = await res
+
+    console.log(res)
+  } catch (err) {
+    console.error(err)
+  }
+}
+</script>
 <template>
   <Section>
-    <h1>Contact Form</h1>
-    <form accept-charset="UTF-8" action="https://www.formbackend.com/f/ee96f8fb88dbbda7" method="POST">
-      <div class="form-fields">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required />
-      </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h1 class="mt-5 fw-bold">Entre em contato</h1>
 
-      <div class="form-fields">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
+        <form @submit.prevent="submit">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input v-model="name" type="text" class="form-control" id="nome" />
+          </div>
 
-      <div class="form-fields">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input v-model="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+            <div id="emailHelp" class="form-text">Não compartilharei seu e-mail com ninguem.</div>
+          </div>
 
-      <button type="submit">Send message</button>
-    </form>
+          <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea v-model="message" class="form-control" id="mensagem" rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" :disabled="name === '' || email === '' || message.length < 10">
+            <font-awesome-icon icon="fa-solid fa-paper-plane" />
+            Enviar
+          </button>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <Email />
+      </div>
+    </div>
   </Section>
 </template>
-
-<style scoped>
-h1 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-.form-fields {
-  margin-bottom: 1rem;
-}
-label {
-  display: block;
-  margin-bottom: 4px;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-input[type='text'],
-input[type='email'],
-textarea {
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  padding: 6px 10px;
-  border-radius: 4px;
-}
-body {
-  display: block;
-}
-button[type='submit'] {
-  background-color: rgb(67 56 202);
-  color: white;
-  font-size: 0.8rem;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 12px;
-  font-weight: 500;
-}
-</style>
