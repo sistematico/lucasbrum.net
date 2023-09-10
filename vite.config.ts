@@ -12,40 +12,42 @@ import matter from 'gray-matter'
 export default defineConfig({
   resolve: {
     alias: {
-      '~/': `${resolve(__dirname, 'src')}/`,
-    },
+      '~/': `${resolve(__dirname, 'src')}/`
+    }
   },
   plugins: [
     vue({
-      include: [/\.vue$/, /\.md$/], // <-- allows Vue to compile Markdown files
+      include: [/\.vue$/, /\.md$/] // <-- allows Vue to compile Markdown files
     }),
     pages({
       extensions: ['vue', 'md'],
       extendRoute(route) {
         const path = resolve(__dirname, route.component.slice(1))
 
+        console.log(route.component.slice(1))
+
         if (!path.includes('projects.md') && path.endsWith('.md')) {
           const md = fs.readFileSync(path, 'utf-8')
           const { data } = matter(md)
           route.meta = Object.assign(route.meta || {}, { frontmatter: data })
+          console.log(route)  
         }
 
         return route
-      },
+      }
     }),
     markdown({}),
     components({
-      dirs: [
-        'src/components',
-        'src/layouts'
-      ],
+      dirs: ['src/components', 'src/layouts'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      directoryAsNamespace: true,
+      collapseSamePrefixes: true
     })
   ],
 
   build: {
     rollupOptions: {
-      external: (id) => id.includes('_posts')
+      external: id => id.includes('_posts')
     }
   }
 })

@@ -73,7 +73,7 @@ const submit = async () => {
         </form>
       </div>
       <div class="col-md-4">
-        <Email />
+        <lottie-email />
       </div>
     </div>
   </Section>

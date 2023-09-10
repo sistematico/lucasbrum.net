@@ -2,7 +2,7 @@
   <Section>
     <div class="row">
       <div class="col-md-4 order-0 order-md-1">
-        <Astronaut />
+        <lottie-astronaut />
       </div>
       <div class="col-md-8 order-1 order-md-0">
         <h1 class="mt-5 fw-bold">Olá, eu sou o Lucas</h1>

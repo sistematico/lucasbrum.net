@@ -18,7 +18,9 @@ library.add(far, fas, fab)
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'exact-active'
 })
 
 router.beforeResolve((to, _from, next) => {

@@ -23,7 +23,8 @@ a, .nav-link {
   transition: all 750ms ease;
 }
 
-a:hover, .nav-link:hover {
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show,
+a:hover, .nav-link:hover, .active {
   color: $danger;
 }
 
