@@ -5,6 +5,9 @@
       Posso desenvolver seu site, sistema ou sua identidade visual.<br />
       Não hesite em entrar em contato e solicitar um orçamento sem compromisso.<br />
     </p>
-    <a href="https://wa.me//5567998552020?text=Gostaria%20de%20solicitar%20um%20orçamento" class="btn btn-primary btn-lg">WhatsApp</a>
+    <a href="https://wa.me//5567998552020?text=Gostaria%20de%20solicitar%20um%20orçamento" class="btn btn-primary btn-lg text-white">
+      <font-awesome-icon icon="fa-brands fa-whatsapp" />
+      WhatsApp
+    </a>
   </Section>
 </template>
