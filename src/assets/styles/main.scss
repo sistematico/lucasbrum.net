@@ -1,3 +1,4 @@
+@import "chameleon";
 @import "fonts";
 
 $body-bg: #252B48;
@@ -26,4 +27,14 @@ a:hover, .nav-link:hover {
   color: $danger;
 }
 
-@import "chameleon";
+.bg-25 {
+  background-color: rgba(43, 48, 53, 0.25);
+}
+
+.bg-50 {
+  background-color: rgba(43, 48, 53, 0.5);
+}
+
+.bg-75 {
+  background-color: rgba(43, 48, 53, 0.75);
+}
