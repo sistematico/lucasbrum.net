@@ -1,5 +1,5 @@
 <template>
-  <div>
-    index
-  </div>
+    <button class="btn btn-danger">
+      Olá
+    </button>
 </template>

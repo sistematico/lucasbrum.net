@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Nunito';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/fonts/Nunito/Nunito-Regular.woff2') format('woff2'), /* Super Modern Browsers */ 
+    url('/assets/fonts/Nunito/Nunito-Regular.woff') format('woff'), /* Pretty Modern Browsers */ 
+    url('/assets/fonts/Nunito/Nunito-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Nunito Bold';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/fonts/Nunito/Nunito-Bold.woff2') format('woff2'), /* Super Modern Browsers */ 
+    url('/assets/fonts/Nunito/Nunito-Bold.woff') format('woff'), /* Pretty Modern Browsers */ 
+    url('/assets/fonts/Nunito/Nunito-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/fonts/Alegreya/Alegreya-Regular.woff2') format('woff2'), /* Super Modern Browsers */ 
+    url('/assets/fonts/Alegreya/Alegreya-Regular.woff') format('woff'), /* Pretty Modern Browsers */ 
+    url('/assets/fonts/Alegreya/Alegreya-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'Alegreya Bold';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('/assets/fonts/Alegreya/Alegreya-Bold.woff2') format('woff2'), /* Super Modern Browsers */ 
+    url('/assets/fonts/Alegreya/Alegreya-Bold.woff') format('woff'), /* Pretty Modern Browsers */ 
+    url('/assets/fonts/Alegreya/Alegreya-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+}

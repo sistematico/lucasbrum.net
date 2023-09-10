@@ -1,1 +1,29 @@
+@import "fonts";
+
+$body-bg: #252B48;
+$body-color: #ffffff;
+
+$primary: #5B9A8B;
+$danger: #F7E987;
+
+$theme-colors: (
+  "primary": $primary,
+  "danger": $danger
+);
+
 @import "bootstrap/scss/bootstrap";
+
+body {
+  font-family: 'Nunito', Arial, Helvetica, sans-serif;
+}
+
+a, .nav-link {
+  text-decoration: none;
+  transition: all 750ms ease;
+}
+
+a:hover, .nav-link:hover {
+  color: $danger;
+}
+
+@import "chameleon";

@@ -116,6 +116,7 @@ function getGroupName(p: Post) {
               <span text-sm op50 ws-nowrap>
                 {{ route.date }}
               </span>
+              
               <span v-if="route.duration" text-sm op40 ws-nowrap>· {{ route.duration }}</span>
               <span v-if="route.platform" text-sm op40 ws-nowrap>· {{ route.platform }}</span>
             </div>
