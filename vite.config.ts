@@ -21,16 +21,15 @@ export default defineConfig({
     }),
     pages({
       extensions: ['vue', 'md'],
-      extendRoute(route) {
+      extendRoute(route, _parent) {
         const path = resolve(__dirname, route.component.slice(1))
 
         if (!path.includes('projects.md') && path.endsWith('.md')) {
-          const layout = path.includes('/posts') ? 'blog' : 'default'
+          const layout = path.includes('/posts') ? 'blog' : ''
           const md = fs.readFileSync(path, 'utf-8')
           const { data } = matter(md)
           route.meta = Object.assign(route.meta || {}, { layout, frontmatter: data })
         }
-
         return route
       }
     }),

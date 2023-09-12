@@ -8,11 +8,13 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Blog: typeof import('./src/layouts/blog.vue')['default']
+    Breadcrumb: typeof import('./src/components/breadcrumb.vue')['default']
     Burger: typeof import('./src/components/burger.vue')['default']
     Card: typeof import('./src/components/card.vue')['default']
     Default: typeof import('./src/layouts/default.vue')['default']
     Footer: typeof import('./src/components/footer.vue')['default']
     Header: typeof import('./src/components/header.vue')['default']
+    Link: typeof import('./src/components/link.vue')['default']
     LottieAstronaut: typeof import('./src/components/lottie/astronaut.vue')['default']
     LottieBlog: typeof import('./src/components/lottie/blog.vue')['default']
     LottieEmail: typeof import('./src/components/lottie/email.vue')['default']
@@ -22,5 +24,6 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     Search: typeof import('./src/components/search.vue')['default']
     Section: typeof import('./src/components/section.vue')['default']
+    Wrapper: typeof import('./src/components/wrapper.vue')['default']
   }
 }

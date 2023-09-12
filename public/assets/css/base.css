@@ -1,13 +1,13 @@
 html,
 body,
-#app {
+#app,
+#wrapper {
   height: 100%;
 }
 
-#app {
+#app, #wrapper {
   display: flex;
   flex-direction: column;
-  /* width: 100%; */
 }
 
 main > .container {

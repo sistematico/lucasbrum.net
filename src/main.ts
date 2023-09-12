@@ -5,7 +5,6 @@ import '~/assets/styles/main.scss'
 import 'bootstrap'
 import app from '~/app.vue'
 import generatedRoutes from '~pages'
-//import generatedRoutes from 'virtual:generated-pages'
 import NProgress from 'nprogress'
 import '~/assets/styles/nprogress.scss'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -22,17 +21,9 @@ const routes = setupLayouts(generatedRoutes)
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
-
-
-
-
-// const router = createRouter({
-//   history: createWebHistory(),
-//   routes,
-//   linkActiveClass: 'active',
-//   linkExactActiveClass: 'exact-active'
-// })
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'exact-active'
+})
 
 router.beforeResolve((to, _from, next) => {
   if (to.name) {

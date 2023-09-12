@@ -1,10 +1,10 @@
 <template>
-  <RouterView />
-  <!-- <router-view v-slot="{ Component, route }">
+  <!-- <RouterView /> -->
+  <router-view v-slot="{ Component, route }">
     <transition name="fade" mode="out-in">
       <component :is="Component" :key="route" />
     </transition>
-  </router-view> -->
+  </router-view>
 </template>
 <style>
 .fade-enter-active,

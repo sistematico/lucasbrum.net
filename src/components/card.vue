@@ -22,9 +22,10 @@ defineProps<{
   <div class="card-body">
     <h5 class="card-title">{{ title }}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">{{ date }} · {{ duration }}</h6>
-    <component :is="link.includes('://') ? 'a' : 'RouterLink'" v-bind="link.includes('://') ? { href: link, target: '_blank', rel: 'noopener noreferrer' } : { to: link }" class="btn btn-primary stretched-link">
+    <Link :href="link">Leia Mais</Link>
+    <!-- <component :is="link.includes('://') ? 'a' : 'RouterLink'" v-bind="link.includes('://') ? { href: link, target: '_blank', rel: 'noopener noreferrer' } : { to: link }" class="btn btn-primary stretched-link">
       Leia mais
-    </component>
+    </component> -->
   </div>
 </div>
 </template>

@@ -1,31 +1,41 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const url = 'https://www.formbackend.com/f/ee96f8fb88dbbda7'
-const name = ref('Anônimo')
+const name = ref('')
 const email = ref('')
 const message = ref('')
 const status = ref('')
+const formURL = 'https://www.formbackend.com/f/ee96f8fb88dbbda7'
+
+async function postData(url = '', data = {}) {
+  const response = await fetch(url, {
+    method: 'POST',
+    // mode: 'cors'
+    // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    // credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    // redirect: 'follow', // manual, *follow, error
+    // referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  })
+
+  return response.json()
+}
 
 const submit = async () => {
   try {
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ name, email, message })
-    })
+    const res = await postData(formURL, { name, email, message })
 
-    if (!res.ok) {
-      status.value = `Erro: ${res.status} - ${res.statusText}`
-      return
-    }
+    console.log(res)
 
-    const responseData = await res.json()
-    console.log(responseData)
+    if (!res.ok) status.value = `An error has occured: ${res.status} - ${res.statusText}`
     
-    status.value = `Successo: ${res.status} - ${res.statusText}`;    
+    status.value = `${res.status} - ${res.statusText}`    
   } catch (err) {
-    throw err
+    console.error(err)
   }
 }
 </script>
@@ -35,7 +45,8 @@ const submit = async () => {
       <div class="col-md-8">
         <h1 class="mt-5 fw-bold">Entre em contato</h1>
 
-        <div class="alert alert-danger alert-dismissible fade show" role="alert" v-if="status">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" v-if="status">
+          <!-- <strong>Holy guacamole!</strong> You should check in on some of those fields below. -->
           {{ status }}
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -57,7 +68,7 @@ const submit = async () => {
             <textarea v-model="message" class="form-control" id="mensagem" rows="3"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary" :disabled="email === '' || message.length < 5">
+          <button type="submit" class="btn btn-primary" :disabled="name === '' || email === '' || message.length < 10">
             <font-awesome-icon icon="fa-solid fa-paper-plane" />
             Enviar
           </button>

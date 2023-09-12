@@ -14,6 +14,7 @@ const router = useRouter()
 
 const routes: Post[] = router
   .getRoutes()
+  .filter(i => i.name)
   .filter(i => i.meta.frontmatter)
   .filter(i => i.path.startsWith('/posts') && i.meta.frontmatter.date && !i.meta.frontmatter.draft)
   .filter(i => !i.path.endsWith('.html'))
