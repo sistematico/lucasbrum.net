@@ -7,14 +7,12 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Base: typeof import('./src/layouts/base.vue')['default']
-    BlogList: typeof import('./src/components/blog/list.vue')['default']
-    BlogListPosts: typeof import('./src/components/blog/listPosts.vue')['default']
+    Blog: typeof import('./src/layouts/blog.vue')['default']
     Burger: typeof import('./src/components/burger.vue')['default']
     Card: typeof import('./src/components/card.vue')['default']
+    Default: typeof import('./src/layouts/default.vue')['default']
     Footer: typeof import('./src/components/footer.vue')['default']
     Header: typeof import('./src/components/header.vue')['default']
-    ListPosts: typeof import('./src/components/listPosts.vue')['default']
     LottieAstronaut: typeof import('./src/components/lottie/astronaut.vue')['default']
     LottieBlog: typeof import('./src/components/lottie/blog.vue')['default']
     LottieEmail: typeof import('./src/components/lottie/email.vue')['default']

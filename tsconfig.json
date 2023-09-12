@@ -22,9 +22,10 @@
     "noFallthroughCasesInSwitch": true,
     "paths": {
       "~/*": ["src/*"]
-    }
+    },
   },
   "include": [
+    "vite-plugin-vue-layouts.d.ts",
     "components.d.ts", 
     "src/**/*.ts", 
     "src/**/*.d.ts", 

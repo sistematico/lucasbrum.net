@@ -1,9 +1,9 @@
-// import path from 'node:path'
 import fs from 'fs-extra'
-import { basename, dirname, resolve } from 'node:path'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import pages from 'vite-plugin-pages'
+import layouts from 'vite-plugin-vue-layouts'
 import markdown from 'unplugin-vue-markdown/vite'
 import components from 'unplugin-vue-components/vite'
 import matter from 'gray-matter'
@@ -24,27 +24,25 @@ export default defineConfig({
       extendRoute(route) {
         const path = resolve(__dirname, route.component.slice(1))
 
-        console.log(route.component.slice(1))
-
         if (!path.includes('projects.md') && path.endsWith('.md')) {
+          const layout = path.includes('/posts') ? 'blog' : 'default'
           const md = fs.readFileSync(path, 'utf-8')
           const { data } = matter(md)
-          route.meta = Object.assign(route.meta || {}, { frontmatter: data })
-          console.log(route)  
+          route.meta = Object.assign(route.meta || {}, { layout, frontmatter: data })
         }
 
         return route
       }
     }),
+    layouts(),
     markdown({}),
     components({
-      dirs: ['src/components', 'src/layouts'],
+      dirs: ['src/components'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       directoryAsNamespace: true,
       collapseSamePrefixes: true
     })
   ],
-
   build: {
     rollupOptions: {
       external: id => id.includes('_posts')

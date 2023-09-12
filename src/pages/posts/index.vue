@@ -22,7 +22,7 @@ const routes: Post[] = router
     title: i.meta.frontmatter.title,
     date: i.meta.frontmatter.date,
     lang: i.meta.frontmatter.lang,
-    duration: i.meta.frontmatter.duration,
+    duration: i.meta.frontmatter.duration || '1min',
     recording: i.meta.frontmatter.recording,
     upcoming: i.meta.frontmatter.upcoming,
     redirect: i.meta.frontmatter.redirect
@@ -57,12 +57,7 @@ function getGroupName(p: Post) {
           <h2 v-if="!isSameGroup(route, posts[idx - 1])">
             <span class="badge text-bg-light">{{ getGroupName(route) }}</span>
           </h2>
-          <template v-if="route.duration">
-            <Card :title="route.title" :date="formatDate(route.date)" :link="route.path" :duration="route.duration" />
-          </template>
-          <template v-else>
-            <Card :title="route.title" :date="formatDate(route.date)" :link="route.path" />
-          </template>
+          <Card :title="route.title" :date="formatDate(route.date)" :link="route.path" :duration="route.duration" />
         </template>
       </div>
       <div class="col-md-4">
