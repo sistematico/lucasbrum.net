@@ -6,8 +6,12 @@ description: Lista de alguns projetos
 projects:
   Atuais:
     - name: 'AgroComm'
-      link: 'https://github.com/sistematico/agrocomm'
-      desc: 'Unleash Nuxt Developer Experience'
+      link: 'https://github.com/agro-comm/agrocomm.com.br'
+      desc: 'Site feito usando o Vue.js 3 com TypeScript, Setup Syntax e Composition API'
+      icon: 'i-logos-nuxt-icon saturate-0'
+    - name: 'AgroComm API'
+      link: 'https://github.com/agro-comm/api.agrocomm.com.br'
+      desc: 'API feita usando o Node.js com Fastify e Prisma'
       icon: 'i-logos-nuxt-icon saturate-0'
 ---
 

@@ -3,7 +3,7 @@
     <Header />
     <main class="flex-shrink-0">
       <div class="container">
-        <Section>
+        <!-- <Section> -->
           <Breadcrumb 
             :items="[
               { name: 'Início', link: '/' }, 
@@ -20,7 +20,7 @@
               <a href="#" @click.prevent="$router.back()">Voltar</a>
             </div>
           </div>
-        </Section>
+        <!-- </Section> -->
       </div>
     </main>
     <Footer />
