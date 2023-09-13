@@ -25,7 +25,7 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Install Nuxt using pnpm
+      - name: Install Vite using pnpm
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -36,4 +36,3 @@ jobs:
             cd ${{ secrets.PROJECT_PATH }}
             pnpm install
             pnpm run build
-            sudo /usr/bin/systemctl restart lucasbrum-nuxt.service

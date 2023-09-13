@@ -39,6 +39,10 @@ Meu site profissional usando o <b>[Vite](https://vitejs.dev)</b><sup><em>(com fo
 | :--- | ---: |
 | vite | 4.4.5 |
 
+### Esquema de cores
+
+[catppuccin](https://github.com/catppuccin/catppuccin) [macchiato](https://github.com/sistematico/lucasbrum.net/raw/main/src/assets/styles/_macchiato.scss)
+
 ### 🎩 Context update(Família RHEL)
 
 ```bash

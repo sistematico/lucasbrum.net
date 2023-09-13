@@ -1,14 +1,26 @@
-// @import "chameleon";
 @import "fonts";
+@import "macchiato";
 
-$body-bg: #252B48;
+
+:root {
+  --c-bg-primary: #1e1e27;
+  --c-bg-secondary: #2c2d38;
+  --c-text-primary: #fff;
+  --c-text-secondary: #95a3b9;
+  --c-action-primary: #2276fc;
+  --c-focus-ring: #9fc4ff;
+}
+
+$body-bg: #1e1e27;
 $body-color: #ffffff;
 
 $primary: #5B9A8B;
 $danger: #F7E987;
+$orange: #ef9530;
 
 $theme-colors: (
   "primary": $primary,
+  "warning": $orange,
   "danger": $danger
 );
 
@@ -29,13 +41,13 @@ a:hover, .nav-link:hover, .active {
 }
 
 .bg-25 {
-  background-color: rgba(43, 48, 53, 0.25);
+  background-color: rgba(30, 30, 39, 0.25);
 }
 
 .bg-50 {
-  background-color: rgba(43, 48, 53, 0.5);
+  background-color: rgba(30, 30, 39, 0.5);
 }
 
 .bg-75 {
-  background-color: rgba(43, 48, 53, 0.75);
+  background-color: rgba(30, 30, 39, 0.75);
 }
