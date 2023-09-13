@@ -69,6 +69,10 @@ jobs:
         with:
           path: './dist'
 
+      - name: Copy CNAME & 404.html to dist/
+        run: cp CNAME 404.html dist/
+        
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2 
