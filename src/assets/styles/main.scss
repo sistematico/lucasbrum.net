@@ -79,6 +79,18 @@ a:hover,
   background-color: transparent;
 }
 
+.form-control {
+  background-color: $c-bg-secondary;
+  border: 2px solid $orange;
+  color: $c-text-primary;
+}
+
+.form-control:focus {
+  background-color: $c-bg-tertiary;
+  border: 2px solid $orange;
+  color: $c-text-primary;
+}
+
 .bg-25 {
   background-color: rgba(30, 30, 39, 0.25);
 }
