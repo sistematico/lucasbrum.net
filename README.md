@@ -1,13 +1,13 @@
 # 🌎 [lucasbrum.net](https://lucasbrum.net)
 
 <p align="center">
-  <img src="https://github.com/sistematico/lucasbrum.net/raw/main/public/assets/img/logo.svg#gh-dark-mode-only" alt="Lucas Saliés Brum" width="300" />
-  <img src="https://github.com/sistematico/lucasbrum.net/raw/main/public/assets/img/logo-dark.svg#gh-light-mode-only" alt="Lucas Saliés Brum" width="300" />
+  <img src="https://github.com/sistematico/lucasbrum.net/raw/main/public/assets/img/logo.svg#gh-light-mode-only" alt="Lucas Saliés Brum" width="300" />
+  <img src="https://github.com/sistematico/lucasbrum.net/raw/main/public/assets/img/logo-dark.svg#gh-dark-mode-only" alt="Lucas Saliés Brum" width="300" />
 </p>
 
 ### 🤖 CI/CD
 
-[![CD](https://github.com/sistematico/lucasbrum.net/actions/workflows/pages.yml/badge.svg)](https://github.com/sistematico/lucasbrum.net/actions/workflows/pages.yml)
+[![CD](https://github.com/sistematico/lucasbrum.net/actions/workflows/deploy.yml/badge.svg)](https://github.com/sistematico/lucasbrum.net/actions/workflows/deploy.yml)
 
 ### 📰 Descrição
 
@@ -15,48 +15,38 @@ Meu site profissional usando o <b>[Vite](https://vitejs.dev)</b><sup><em>(com fo
 
 ### 🎉 Demonstração
 
-- [lucasbrum.net](https://lucasbrum.net) (Hospedado no [Github Pages](https://pages.github.com))
+- [lucasbrum.net](https://lucasbrum.net) (Hospedado graças ao [Oracle Cloud](https://www.oracle.com/br/cloud/), Obrigado Oracle! 🧡)
 
-### Bibliotecas, frameworks e linguagens
+### 📦 Bibliotecas, frameworks e linguagens
 
 - [Vue.js 3](https://vuejs.org) (Setup Syntax + Composition API)
 - [Vite](https://vitejs.dev) (Setup Syntax + Composition API)
 - [TypeScript](https://www.typescriptlang.org) (Setup Syntax + Composition API)
 - [Twitter Bootstrap 5](https://getbootstrap.com)
 
-### Plugins
+### 🔌 Plugins & Dependências
 
-```json
-  "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.1",
-    "fs-extra": "^11.1.1",
-    "unplugin-vue-markdown": "^0.24.3",
-    "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
-  },
-  "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "@types/node": "^20.6.0",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "gray-matter": "^4.0.3",
-    "sass": "^1.66.1",
-    "typescript": "^5.0.2",
-    "unplugin-vue-components": "^0.25.2",
-    "vite": "^4.4.5",
-    "vite-plugin-pages": "^0.31.0",
-    "vue-tsc": "^1.8.5"
-  }
-```
+#### Dependências
 
-### Context update(Família RHEL)
+| Pacote | Versão |
+| :--- | ---: |
+| vue | 3.3.4 |
+| vue-router | 4.2.4 |
+
+#### Dependências de desenvolvimento
+
+| Pacote | Versão |
+| :--- | ---: |
+| vite | 4.4.5 |
+
+### 🎩 Context update(Família RHEL)
 
 ```bash
 chcon -vR system_u:object_r:httpd_sys_content_t:s0 /var/www/lucasbrum.net
 setsebool -P httpd_can_network_connect 1
 ```
 
-### Instruções
+### 👨‍🏫 Instruções
 
 Clonar o repositório: 
 
@@ -79,7 +69,13 @@ pnpm run dev
 Abra a url em seu navegador: [http://localhost:5173](http://localhost:5173) 
 Tudo deve funcionar conforme o esperado 🥳
 
-### FAQ
+### 📦 Rodando em produção
+
+### Nginx proxy
+
+W.I.P.
+
+### ❓ FAQ
 
 *Erro nos logs do Nginx* 
 

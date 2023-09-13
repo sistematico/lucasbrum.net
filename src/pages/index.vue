@@ -1,5 +1,4 @@
 <template>
-  <transition name="fade" mode="out-in">
     <Section>
       <div class="row">
         <div class="col-md-4 order-0 order-md-1">
@@ -18,5 +17,4 @@
         </div>
       </div>
     </Section>
-  </transition>
 </template>
