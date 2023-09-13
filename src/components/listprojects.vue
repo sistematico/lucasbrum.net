@@ -16,8 +16,9 @@ function slug(name: string) {
 
         <div class="card" v-for="(item, idx) in projects[project]" :key="idx">
           <div class="row g-0">
-            <div class="col-md-4" v-if="item.image">
-              <img src="item.image" class="img-fluid rounded-start" alt="item.name" />
+            <div class="col-md-4">
+              <img :src="item.image" class="img-fluid rounded-start" :alt="item.name" v-if="item.image" />
+              <img src="https://placehold.co/200" class="img-fluid rounded-start" :alt="item.name" v-else />
             </div>
             <div class="col-md-8">
               <div class="card-body">
