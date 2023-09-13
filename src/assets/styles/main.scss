@@ -1,43 +1,82 @@
-@import "fonts";
-@import "macchiato";
+@import 'fonts';
+@import 'macchiato';
 
+$c-bg-primary: #1e1e27;
+$c-bg-secondary: #2c2d38;
+$c-bg-tertiary: #575969;
+$c-text-primary: #fff;
+$c-text-secondary: #95a3b9;
+$c-action-primary: #2276fc;
+$c-focus-ring: #9fc4ff;
 
-:root {
-  --c-bg-primary: #1e1e27;
-  --c-bg-secondary: #2c2d38;
-  --c-text-primary: #fff;
-  --c-text-secondary: #95a3b9;
-  --c-action-primary: #2276fc;
-  --c-focus-ring: #9fc4ff;
-}
+$body-bg: $c-bg-primary;
+$body-color: $c-text-secondary;
 
-$body-bg: #1e1e27;
-$body-color: #ffffff;
-
-$primary: #5B9A8B;
-$danger: #F7E987;
+$primary: #5b9a8b;
+$danger: #f7e987;
 $orange: #ef9530;
 
 $theme-colors: (
-  "primary": $primary,
-  "warning": $orange,
-  "danger": $danger
+  'primary': $primary,
+  'warning': $orange,
+  'danger': $danger,
+  'secondary': $c-bg-secondary,
+  'tertiary': $c-bg-tertiary,
+  'tertiary-bg-rgb': $c-bg-tertiary,
+  'tertiary-bg': $c-bg-tertiary
 );
 
-@import "bootstrap/scss/bootstrap";
+@import 'bootstrap/scss/bootstrap';
 
 body {
   font-family: 'Nunito', Arial, Helvetica, sans-serif;
+  background-color: $c-bg-primary;
 }
 
-a, .nav-link {
+a {
+  text-decoration: none;
+  transition: all 500ms ease;
+}
+
+.navbar-nav .nav-link {
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 .20em;
+  padding: .32em 1em;
+  border-radius: 4px;
+  // background-color: $c-bg-secondary;
   text-decoration: none;
   transition: all 750ms ease;
 }
 
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show,
-a:hover, .nav-link:hover, .active {
-  color: $danger;
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show,
+a:hover,
+.nav-link:hover,
+.active {
+  color: #ffffff;
+  background-color: $c-bg-secondary;
+}
+
+header, footer, section {
+  background-color: $c-bg-primary;
+}
+
+.navbar-nav .nav-link.show,
+a:hover,
+.nav-link:hover,
+.active {
+  color: $orange;
+}
+
+.navbar-brand {
+  font-family: 'Nunito Bold', Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+}
+
+.navbar-brand.active {
+  color: inherit;
+  background-color: transparent;
 }
 
 .bg-25 {

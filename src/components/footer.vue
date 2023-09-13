@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer mt-auto py-3 bg-body-tertiary">
+  <footer class="mt-auto py-3" style="background-color: #1e1e27;">
     <div class="container">
       <span class="text-body-secondary">Site criado por Lucas Saliés Brum e licenciado sob a licença <a href="https://unlicense.org" target="_blank">UnLicense</a>.</span>
     </div>

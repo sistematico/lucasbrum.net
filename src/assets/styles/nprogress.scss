@@ -1,4 +1,4 @@
-$bar-color: #F7E987;
+$bar-color: #ef9530;
 
 #nprogress {
   pointer-events: none;
@@ -13,7 +13,7 @@ $bar-color: #F7E987;
   left: 0;
 
   width: 100%;
-  height: 2px;
+  height: 4px;
 }
 
 /* Fancy blur effect */
@@ -45,7 +45,7 @@ $bar-color: #F7E987;
   height: 18px;
   box-sizing: border-box;
 
-  border: solid 2px transparent;
+  border: solid 3px transparent;
   border-top-color: $bar-color;
   border-left-color: $bar-color;
   border-radius: 50%;

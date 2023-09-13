@@ -26,31 +26,31 @@ const messageValid = ref(false)
 
 const validateName = () => {
     if (name.value.length < 3) {
-        nameH.value = 'Digite um e-mail válido.';
+        nameH.value = 'Digite um nome com 3 caracteres ou mais.'
         nameValid.value = false
     } else {
         nameValid.value = true
-        nameH.value = 'Não compartilharei seu e-mail com ninguem.';
+        nameH.value = ''
     }
 }
 
 const validateEmail = () => {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
-        emailH.value = 'Digite um e-mail válido.';
-        emailValid.value = false
+      emailH.value = 'Não compartilharei seu e-mail com ninguem.'
+      emailValid.value = true
     } else {
-        emailValid.value = true
-        emailH.value = 'Não compartilharei seu e-mail com ninguem.';
+      emailValid.value = false
+      emailH.value = 'Digite um e-mail válido.';
     }
 }
 
 const validateMessage = () => {
     if (message.value.length < 5) {
-        messageH.value = 'Digite um e-mail válido.';
+        messageH.value = 'Digite uma mensagem com 5 caracteres ou mais.'
         nameValid.value = false
     } else {
         nameValid.value = true
-        messageH.value = 'Não compartilharei seu e-mail com ninguem.';
+        messageH.value = ''
     }
 }
 
@@ -95,23 +95,23 @@ const submit = async () => {
         <form @submit.prevent="submit">
           <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
-            <input v-model="name" type="text" class="form-control" id="nome" @blur="validateName" />
+            <input v-model="name" type="text" class="form-control shadow-none" @keypress="validateName" />
             <div class="form-text">{{ nameH }}</div>
           </div>
 
           <div class="mb-3">
             <label for="email" class="form-label">E-mail</label>
-            <input v-model="email" type="email" class="form-control" id="email" @blur="validateEmail" />
+            <input v-model="email" type="email" class="form-control shadow-none" @keypress="validateEmail" />
             <div class="form-text">{{ emailH }}</div>
           </div>
 
           <div class="mb-3">
             <label for="mensagem" class="form-label">Mensagem</label>
-            <textarea v-model="message" class="form-control" id="mensagem" rows="3" @blur="validateMessage"></textarea>
+            <textarea v-model="message" class="form-control shadow-none" rows="3" @keypress="validateMessage"></textarea>
             <div class="form-text">{{ messageH }}</div>
           </div>
 
-          <button ref="submitBtn" type="submit" class="btn btn-primary" :disabled="nameValid || emailValid || messageValid">
+          <button ref="submitBtn" type="submit" class="btn btn-primary">
           <!-- <button ref="submitBtn" type="submit" class="btn btn-primary"> -->
             <font-awesome-icon icon="fa-solid fa-paper-plane" />
             Enviar
