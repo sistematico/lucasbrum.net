@@ -30,8 +30,14 @@ $theme-colors: (
 
 body {
   font-family: 'Nunito', Arial, Helvetica, sans-serif;
-  background-color: $c-bg-primary;
+  // background-color: $c-bg-primary;
+  background-color: #fff;
+  transition: background 0.2s linear;
 }
+
+body.dark {
+  background-color: #292c35;
+} /* #9b59b6 */
 
 a {
   text-decoration: none;

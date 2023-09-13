@@ -11,6 +11,8 @@ declare module 'vue' {
     Breadcrumb: typeof import('./src/components/breadcrumb.vue')['default']
     Burger: typeof import('./src/components/burger.vue')['default']
     Card: typeof import('./src/components/card.vue')['default']
+    Darkswitch: typeof import('./src/components/darkswitch.vue')['default']
+    'Darkswitch.orig': typeof import('./src/components/darkswitch.orig.vue')['default']
     Default: typeof import('./src/layouts/default.vue')['default']
     Footer: typeof import('./src/components/footer.vue')['default']
     Header: typeof import('./src/components/header.vue')['default']

@@ -13,6 +13,7 @@ const title = ref(import.meta.env.VITE_APP_TITLE)
         <Burger name="navbarCollapse" />
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <Navbar />
+          <!-- <Darkswitch /> -->
         </div>
       </div>
     </nav>
