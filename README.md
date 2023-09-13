@@ -77,7 +77,44 @@ Tudo deve funcionar conforme o esperado 🥳
 
 ### Nginx proxy
 
-W.I.P.
+*/etc/nginx/sites-available/lucasbrum.net*
+
+```conf
+server {
+    listen 80; # default_server
+    listen [::]:80; # default_server
+    server_name *.lucasbrum.net lucasbrum.net;
+    return 301 https://lucasbrum.net$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    ssl_certificate         /etc/letsencrypt/live/lucasbrum.net/fullchain.pem;
+    ssl_certificate_key     /etc/letsencrypt/live/lucasbrum.net/privkey.pem;
+
+    server_name www.lucasbrum.net;
+    return 301 https://lucasbrum.net$request_uri;
+}
+
+server {
+    listen 443 ssl; # default_server
+    listen [::]:443 ssl; # default_server
+
+    ssl_certificate         /etc/letsencrypt/live/lucasbrum.net/fullchain.pem;
+    ssl_certificate_key     /etc/letsencrypt/live/lucasbrum.net/privkey.pem;
+
+    server_name lucasbrum.net;
+    root /var/www/lucasbrum.net/dist;
+
+    location / {
+      try_files $uri $uri/ /index.html;
+    }
+
+    location ~ /\.ht { deny all; }
+}
+```
 
 ### ❓ FAQ
 

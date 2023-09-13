@@ -24,12 +24,19 @@ export default defineConfig({
       extendRoute(route, _parent) {
         const path = resolve(__dirname, route.component.slice(1))
 
+        let layout = ''
+
+        if (path.includes('/posts')) layout = 'blog'
+        else if (path.includes('/projetos')) layout = 'projects'
+
         if (!path.includes('projects.md') && path.endsWith('.md')) {
-          const layout = path.includes('/posts') ? 'blog' : ''
+          // const layout = path.includes('/posts') ? 'blog' : ''
           const md = fs.readFileSync(path, 'utf-8')
           const { data } = matter(md)
-          route.meta = Object.assign(route.meta || {}, { layout, frontmatter: data })
+          route.meta = Object.assign(route.meta || {}, { frontmatter: data })
         }
+
+        route.meta = Object.assign(route.meta || {}, { layout })
         return route
       }
     }),
