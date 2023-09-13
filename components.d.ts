@@ -18,6 +18,7 @@ declare module 'vue' {
     Header: typeof import('./src/components/header.vue')['default']
     Icons: typeof import('./src/components/icons.vue')['default']
     Link: typeof import('./src/components/link.vue')['default']
+    Listprojects: typeof import('./src/components/listprojects.vue')['default']
     LottieAstronaut: typeof import('./src/components/lottie/astronaut.vue')['default']
     LottieBlog: typeof import('./src/components/lottie/blog.vue')['default']
     LottieEmail: typeof import('./src/components/lottie/email.vue')['default']

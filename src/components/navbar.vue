@@ -14,6 +14,9 @@ isBlog.value = route.name?.toString().startsWith('posts-') ? true : false
       <RouterLink class="nav-link" :class="{'active': isBlog }" to="/posts">Blog</RouterLink>
     </li>
     <li class="nav-item">
+      <RouterLink class="nav-link" to="/projetos">Projetos</RouterLink>
+    </li>
+    <li class="nav-item">
       <RouterLink class="nav-link" to="/contato">Contato</RouterLink>
     </li>
   </ul>
