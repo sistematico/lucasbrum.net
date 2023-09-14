@@ -19,8 +19,3 @@ const title = ref(import.meta.env.VITE_APP_TITLE)
     </nav>
   </header>
 </template>
-<style scoped>
-nav {
-  background-color: rgba(43, 48, 53, .9);
-}
-</style>

@@ -6,7 +6,7 @@ const isBlog = ref(false)
 isBlog.value = route.name?.toString().startsWith('posts-') ? true : false
 </script>
 <template>
-  <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+  <ul class="navbar-nav mb-2 ms-md-auto mb-md-0 text-center text-md-start">
     <li class="nav-item">
       <RouterLink class="nav-link" to="/">Início</RouterLink>
     </li>
