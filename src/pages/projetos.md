@@ -13,18 +13,6 @@ projects:
       link: 'https://github.com/agro-comm/api.agrocomm.com.br'
       desc: 'API feita usando o Node.js com Fastify e Prisma'
       icon: 'i-logos-nuxt-icon saturate-0'
-    - name: 'AgroComm API'
-      link: 'https://github.com/agro-comm/api.agrocomm.com.br'
-      desc: 'API feita usando o Node.js com Fastify e Prisma'
-      icon: 'i-logos-nuxt-icon saturate-0'
-    - name: 'AgroComm API'
-      link: 'https://github.com/agro-comm/api.agrocomm.com.br'
-      desc: 'API feita usando o Node.js com Fastify e Prisma'
-      icon: 'i-logos-nuxt-icon saturate-0'
-    - name: 'AgroComm API'
-      link: 'https://github.com/agro-comm/api.agrocomm.com.br'
-      desc: 'API feita usando o Node.js com Fastify e Prisma'
-      icon: 'i-logos-nuxt-icon saturate-0'
 ---
 
 <Listprojects :projects="frontmatter.projects" />
